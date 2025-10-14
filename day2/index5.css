@@ -12,6 +12,12 @@ body{
     overflow-x: hidden; /* Ngăn tràn ngang trên mobile */
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
+
+
 
 .navbar .nav-item{
     padding: 0 30px;
