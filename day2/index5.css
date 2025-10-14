@@ -64,6 +64,7 @@ body{
 
 
 
+
 .navbar-toggler {
   border: none; /* bỏ viền nếu muốn */
 }
@@ -94,6 +95,10 @@ header{
 
 
 
-
-
+.border-glow {
+  color: #fff;
+  background: #222;
+  border: 2px solid #ff4081;
+  transition: box-shadow 0.3s ease;
+}
 
