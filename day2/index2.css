@@ -1,0 +1,74 @@
+/* RESET & KHẮC PHỤC TRÀN NGANG */
+html, body {
+  width: 100%;
+  overflow-x: hidden ;
+  background-color: antiquewhite;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* NAVBAR */
+.navbar {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar .nav-item {
+  padding: 0 30px;
+}
+
+/* Hiệu ứng nav gạch chân */
+.navbar-nav li {
+  position: relative;
+  font-size: 20px;
+}
+.navbar-nav li::before,
+.navbar-nav li::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: rgb(244, 168, 3);
+  transition: width 0.4s ease;
+}
+.navbar-nav li::before { left: 0; }
+.navbar-nav li::after { right: 0; }
+.navbar-nav li:hover::before,
+.navbar-nav li:hover::after {
+  width: 50%;
+}
+
+/* SECTION NỘI DUNG */
+.nd1 {
+  margin: 100px 0;
+  display: grid;
+  place-items: center;
+  font-family: cursive;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* FOOTER */
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-link:hover {
+  color: #fff;
+}
+footer hr {
+  opacity: 0.3;
+}

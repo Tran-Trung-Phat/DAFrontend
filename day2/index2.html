@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRAGUE</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Icons & AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- CSS riêng -->
+  <link rel="stylesheet" href="index2.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="image/icon.jpg" alt="Logo" width="80" class="me-2">
+          PRAGUE
+        </a>
+
+        <!-- Nút toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Trang chủ</a></li>
+            <li class="nav-item"><a class="nav-link active" href="index2.html">Gốc cảm hứng</a></li>
+            <li class="nav-item"><a class="nav-link active" href="index3.html">Thiết kế</a></li>
+            <li class="nav-item"><a class="nav-link active" href="index4.html">Giới thiệu</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+          <img src="image/clu1.jpg" class="d-block w-100 img-fluid" alt="Ảnh 1">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="image/clu4.jpg" class="d-block w-100 img-fluid" alt="Ảnh 2">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="image/clu3.jpg" class="d-block w-100 img-fluid" alt="Ảnh 3">
+        </div>
+      </div>
+
+      <!-- Nút điều hướng -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== GỐC CẢM HỨNG 1 ===== -->
+  <div class="row item1 align-items-center mt-5 mx-0 p-4" style="background-color: darkseagreen;">
+    <div class="col-12 col-lg-5">
+      <div class="nd1">
+        <h2>GỐC CẢM HỨNG</h2>
+        <p> Một bữa ăn ngon trong không khí vui vẻ, ấm áp bên người thân luôn là mong muốn của chúng ta sau một ngày làm việc...</p>
+        <a class="btn btn-success rounded-pill" href="index5.html">Xem thêm</a>
+      </div>
+    </div>
+    <div class="col-12 col-lg-7 text-center" data-aos="fade-left">
+      <img src="image/anh1.png" class="img-fluid">
+    </div>
+  </div>
+
+  <!-- ===== GỐC CẢM HỨNG 2 ===== -->
+  <div class="container my-5">
+    <div class="row g-4" data-aos="fade-up">
+      <div class="col-6 col-md-3 text-center">
+        <img src="image/shot1.png" class="img-fluid mb-2">
+        <h5>Phòng khách</h5>
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <img src="image/shot2.png" class="img-fluid mb-2">
+        <h5>Phòng ăn</h5>
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <img src="image/shot3.png" class="img-fluid mb-2">
+        <h5>Phòng ngủ</h5>
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <img src="image/shot4.png" class="img-fluid mb-2">
+        <h5>Phòng làm việc</h5>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-3 justify-content-center">
+      <div class="col-6 col-md-3 text-center" data-aos="fade-right">
+        <img src="image/shot5.png" class="img-fluid mb-2">
+        <h5>Sofa</h5>
+      </div>
+      <div class="col-6 col-md-3 text-center" data-aos="fade-up">
+        <img src="image/shot6.png" class="img-fluid mb-2">
+        <h5>Giường</h5>
+      </div>
+      <div class="col-6 col-md-3 text-center" data-aos="fade-left">
+        <img src="image/shot7.png" class="img-fluid mb-2">
+        <h5>Bàn ăn</h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GỐC CẢM HỨNG 3 ===== -->
+  <div class="row item3 align-items-center mx-0 p-4" style="background-color: rgb(231, 188, 19);">
+    <div class="col-12 col-lg-7" data-aos="fade-right">
+      <img src="image/anh2.png" class="img-fluid w-100">
+    </div>
+    <div class="col-12 col-lg-5">
+      <div class="nd1">
+        <h2>GỐC CẢM HỨNG</h2>
+        <p> Một bữa ăn ngon trong không khí vui vẻ, ấm áp bên người thân luôn là mong muốn của chúng ta...</p>
+        <a class="btn btn-secondary rounded-pill" href="index5.html">Xem thêm</a>
+      </div>
+    </div>
+  </div>
+
+  <!--  FOOTER  -->
+  <footer class="bg-dark text-light pt-5 pb-3">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-4">
+          <img width="15%" src="image/icon.jpg" class="mb-3">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laboriosam cumque sequi in?</p>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h5 class="fw-bold mb-3">Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="footer-link">Home</a></li>
+            <li><a href="#" class="footer-link">About</a></li>
+            <li><a href="#" class="footer-link">Services</a></li>
+            <li><a href="#" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h5 class="fw-bold mb-3">Products</h5>
+          <ul class="list-unstyled">
+            <li><a href="" class="footer-link">Menu</a></li>
+            <li><a href="" class="footer-link">Specials</a></li>
+            <li><a href="" class="footer-link">Offers</a></li>
+            <li><a href="" class="footer-link">New Items</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold mb-3">Contact</h5>
+          <p><i class="bi bi-envelope-fill"></i> info@TTP.vn</p>
+          <form class="d-flex">
+            <input type="email" class="form-control me-2" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-danger">Gửi</button>
+          </form>
+        </div>
+      </div>
+      <hr class="bg-secondary">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <small>© 2025 TTP Company. All rights reserved.</small><br>
+          <small>Address: 135 Bình Trị Đông, Quận Bình Tân</small>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+          <a href="" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="bi bi-facebook"></i></a>
+          <a href="" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="bi bi-twitter"></i></a>
+          <a href="" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="bi bi-instagram"></i></a>
+          <a href="" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: false });
+  </script>
+</body>
+</html>

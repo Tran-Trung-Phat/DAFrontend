@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+body{
+    background-color: antiquewhite;
+    overflow-x: hidden; /* Ngăn tràn ngang trên mobile */
+}
+
+
+.navbar .nav-item{
+    padding: 0 30px;
+}
+
+/* animation nav */
+.navbar-nav li {
+  position: relative;
+  font-size: 20px;
+  
+  
+}
+
+.navbar-nav li::before,
+.navbar-nav li::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: rgb(244, 168, 3);
+  transition: width 0.4s ease;
+}
+
+.navbar-nav li::before {
+  left: 0;
+}
+
+.navbar-nav li::after {
+  right: 0;
+}
+
+.navbar-nav li:hover::before,
+.navbar-nav li:hover::after {
+  width: 50%;
+}
+
+/* hiệu ứng nav */
+.navbar {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+
+
+.navbar-toggler {
+  border: none; /* bỏ viền nếu muốn */
+}
+
+
+header{
+    height: 100vh;
+  background-image:  url('image/banner.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.hk{
+  background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(image/bst3.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
+  
+
+}
+
+.pk{
+  color: #D4AF37;
+}
+
+
+
+
+
+
