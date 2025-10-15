@@ -76,6 +76,11 @@ html, body {
 }
 
 
+.mybtn{
+  font-size: 25px;
+  padding: 15px 30px;
+}
+
 header{
     height: 100vh;
   background-image:  url('image/banner.jpg');
