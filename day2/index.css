@@ -1,0 +1,212 @@
+
+
+body{
+    background-color: antiquewhite;
+    overflow-x: hidden; /* Ngăn tràn ngang trên mobile */
+}
+
+
+.navbar .nav-item{
+    padding: 0 30px;
+}
+
+/* animation nav */
+.navbar-nav li {
+  position: relative;
+  font-size: 20px;
+  
+  
+}
+
+.navbar-nav li::before,
+.navbar-nav li::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: rgb(244, 168, 3);
+  transition: width 0.4s ease;
+}
+
+.navbar-nav li::before {
+  left: 0;
+}
+
+.navbar-nav li::after {
+  right: 0;
+}
+
+.navbar-nav li:hover::before,
+.navbar-nav li:hover::after {
+  width: 50%;
+}
+
+/* hiệu ứng nav */
+.navbar {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+
+
+.navbar-toggler {
+  border: none; /* bỏ viền nếu muốn */
+}
+
+
+
+
+
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.right-card {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.anh3{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  
+}
+
+.anh4{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  
+}
+
+.center-text {
+  padding: 20px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.small-link {
+  color: #888;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.small-link:hover {
+  text-decoration: underline;
+}
+
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-body img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+.phongkhach {
+  overflow: hidden;
+  border-radius: 12px; /* bo góc cho đẹp */
+  position: relative;
+}
+
+.phongkhach img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s ease, filter 0.3s ease;
+}
+
+.phongkhach:hover img {
+  transform: scale(1.1); /* zoom ảnh 110% */
+  filter: brightness(1.1); /* làm sáng nhẹ */
+}
+
+.phongkhach:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* đổ bóng khi hover */
+}
+
+
+
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-link:hover {
+  color: #fff;
+}
+
+footer hr {
+  opacity: 0.3;
+}
+
+
+/* 1. Ẩn cuộn ngang toàn trang */
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* 2. Đảm bảo mọi phần tử không vượt quá khung nhìn */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* 3. Căn chỉnh carousel không vượt ngoài lề */
+.carousel,
+.carousel-inner,
+.carousel-item img {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* 4. Căn chỉnh row Bootstrap (vì .row có margin âm) */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* 5. Căn container-fluid cho sát mép */
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* 6. Navbar không bị tràn do hiệu ứng blur */
+.navbar {
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+

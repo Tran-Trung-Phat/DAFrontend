@@ -1,0 +1,97 @@
+header {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('image/tknt1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+.navbar .nav-item{
+    padding: 0 30px;
+}
+
+
+/* animation nav */
+.navbar-nav li {
+  position: relative;
+  font-size: 20px;
+}
+
+.navbar-nav li::before,
+.navbar-nav li::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: rgb(244, 168, 3);
+  transition: width 0.4s ease;
+}
+
+.navbar-nav li::before {
+  left: 0;
+}
+
+.navbar-nav li::after {
+  right: 0;
+}
+
+.navbar-nav li:hover::before,
+.navbar-nav li:hover::after {
+  width: 50%;
+}
+
+
+/* hiệu ứng nav */
+.navbar {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+.tx h1{
+  font-size: 50px;
+}
+
+ .service-card {
+      border: 1px solid CornflowerBlue;
+      border-radius: 8px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .service-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transform: translateY(-5px);
+    }
+    .service-icon {
+      font-size: 40px;
+      
+    }
+
+
+    .footer-link {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-link:hover {
+  color: #fff;
+}
+footer hr {
+  opacity: 0.3;
+}
+
