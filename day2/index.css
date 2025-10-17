@@ -5,6 +5,10 @@ body{
     overflow-x: hidden; /* Ngăn tràn ngang trên mobile */
 }
 
+header{
+  width: 100vh;
+}
+
 
 .navbar .nav-item{
     padding: 0 30px;
@@ -210,3 +214,9 @@ html, body {
 }
 
 
+.card {
+  transition: transform 0.4s ease;
+}
+.card:hover {
+  transform: scale(1.07);
+}
