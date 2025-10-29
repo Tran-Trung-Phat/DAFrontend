@@ -5,6 +5,10 @@ body{
     overflow-x: hidden; /* Ngăn tràn ngang trên mobile */
 }
 
+header{
+  width: 100vh;
+}
+
 
 
 
