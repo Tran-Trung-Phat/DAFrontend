@@ -20,20 +20,11 @@ html, body {
     padding: 0 30px;
 }
 
-@media (max-width: 991.98px) {
-  .navbar .nav-item {
-    padding: 8px 0; /* dọc là chính */
-    text-align: center;
-  }
-}
-
 
 /* animation nav */
 .navbar-nav li {
   position: relative;
   font-size: 20px;
-  
-  
 }
 
 .navbar-nav li::before,
@@ -60,6 +51,7 @@ html, body {
   width: 50%;
 }
 
+
 /* hiệu ứng nav */
 .navbar {
   background: rgba(255, 255, 255, 0.6);
@@ -73,10 +65,11 @@ html, body {
 }
 
 
-
-
-.navbar-toggler {
-  border: none; /* bỏ viền nếu muốn */
+/* active */
+.nav-link.active {
+  color: #ff6600 !important;
+  font-weight: bold;
+  
 }
 
 .polar {
@@ -98,4 +91,18 @@ html, body {
 
 
 
+/* Nav căn giữa trên PC, bên trái trên điện thoại */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    justify-content: flex-start !important; /* căn trái */
+    text-align: left !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    justify-content: center !important; /* căn giữa */
+    text-align: center !important;
+  }
+}
 

@@ -50,6 +50,14 @@ html, body {
   width: 50%;
 }
 
+
+/* active */
+.nav-link.active {
+  color: #ff6600 !important;
+  font-weight: bold;
+  
+}
+
 /* SECTION NỘI DUNG */
 .nd1 {
   margin: 100px 0;
@@ -60,10 +68,16 @@ html, body {
   text-align: center;
 }
 
-.tc {
-  border-width: 2px; /* viền dày hơn một chút */
-  letter-spacing: 0.5px; /* chữ trông sang hơn */
+.nd2{
+  font-size: 20px;
 }
+.kl {
+  border-width: 2px; 
+  letter-spacing: 0.5px; 
+  padding: 15px 30px;
+  font-weight: 500;
+}
+
 
 
 /* FOOTER */
@@ -78,3 +92,5 @@ html, body {
 footer hr {
   opacity: 0.3;
 }
+
+
