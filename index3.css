@@ -47,13 +47,13 @@ body{
 
 /* hiệu ứng nav */
 .navbar {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 249, 196, 0.8) !important;
   backdrop-filter: blur(10px);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 245, 157, 0.95) !important;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -102,4 +102,3 @@ body{
 footer hr {
   opacity: 0.3;
 }
-

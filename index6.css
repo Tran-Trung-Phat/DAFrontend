@@ -1,0 +1,138 @@
+body{
+    background-color: antiquewhite;
+    overflow-x: hidden; /* Ngăn tràn ngang trên mobile */
+}
+
+header{
+  width: 100vh;
+}
+
+
+
+
+.navbar .nav-item{
+    padding: 0 30px;
+}
+
+/* animation nav */
+.navbar-nav li {
+  position: relative;
+  font-size: 20px;
+  
+  
+}
+
+.navbar-nav li::before,
+.navbar-nav li::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: rgb(244, 168, 3);
+  transition: width 0.4s ease;
+}
+
+.navbar-nav li::before {
+  left: 0;
+}
+
+.navbar-nav li::after {
+  right: 0;
+}
+
+.navbar-nav li:hover::before,
+.navbar-nav li:hover::after {
+  width: 50%;
+}
+
+/* hiệu ứng nav */
+.navbar {
+  background: rgba(255, 249, 196, 0.8) !important;
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 245, 157, 0.95) !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+
+
+.navbar-toggler {
+  border: none; /* bỏ viền nếu muốn */
+}
+
+/* active */
+.nav-link.active {
+  color: #ff6600 !important;
+  font-weight: bold;
+  
+}
+
+.right-card {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+.product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+        }
+        .product-img {
+            height: 250px;
+            object-fit: contain;
+            padding: 1.5rem;
+        }
+        .filter-section {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        /* Hiệu ứng marquee */
+        .marquee-container {
+          overflow: hidden;     /* Ẩn phần vượt ra khỏi container */
+          user-select: none;    /* Ngăn chọn văn bản khi kéo chuột */
+          background: #fff;
+          padding: 20px 0;
+          border-radius: 8px;
+        }
+        /*Nội dụng chạy : nơi chứa các card*/
+        .marquee-content {
+          display: flex; /* sếp lại các card nằm ngang*/
+          gap: 20px;  /* khoảng cách giữa các card*/
+          width: max-content;  /*để chiều rộng tự dộng giản theo số lượng card*/
+          /*gọi animation đã định nghĩa ở dưới*/
+          animation: scrolling 20s linear infinite;
+        }
+        
+        /*tạm dừng khi dí chuột vào (tùy chọn cho trải nghiệm người dùng tốt hơn) */
+        .marquee-content:hover {
+          animation-play-state: paused;
+        }
+
+        .marquee-content .card{
+          width: 350px;
+          height: 300px;
+          overflow: hidden;
+          background: #fff;
+        }
+
+        /* Định nghĩa animation scrolling */
+        @keyframes scrolling {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }

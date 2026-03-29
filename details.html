@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sản phẩm</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="image/icon.jpg" alt="Logo" width="80" class="me-2">
+        PRAGUE
+      </a>
+      <div class="collapse navbar-collapse justify-content-center">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index6.html">Sản phẩm</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="nav-item text-start"><a class="nav-link"></a><i class="bi bi-cart3"></i></h3>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Khung hiển thị chi tiết sản phẩm -->
+  <div class="container my-5 pt-4" id="product-detail-container">
+    <div class="row align-items-center">
+      <!-- Phần Ảnh -->
+      <div class="col-md-6 mb-4 mb-md-0 text-center">
+        <div class="p-4 bg-white rounded-4 shadow-sm border">
+          <img id="product-image" src="" alt="Sản phẩm" class="img-fluid rounded w-100 object-fit-cover" style="max-height: 500px;">
+        </div>
+      </div>
+      
+      <!-- Phần Thông tin -->
+      <div class="col-md-6 ps-md-5">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index6.html" class="text-decoration-none text-muted">Sản phẩm</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Chi tiết</li>
+          </ol>
+        </nav>
+        <h2 id="product-name" class="text-uppercase fw-bold mb-2">Tên sản phẩm</h2>
+        <div class="d-flex align-items-center mb-3">
+          <div class="text-warning me-2">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+          </div>
+          <span class="text-muted">(Đánh giá)</span>
+        </div>
+        
+        <h3 id="product-price" class="text-danger fw-bold mb-3">Giá</h3>
+        <p id="product-desc" class="fs-6 text-muted mb-4" style="line-height: 1.8;">Mô tả sản phẩm...</p>
+        
+        <hr class="my-4">
+        
+        <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
+          <div class="input-group shadow-sm" style="width: 140px;">
+            <button class="btn btn-outline-secondary border-end-0" type="button" onclick="updateQuantity(-1)"><i class="bi bi-dash"></i></button>
+            <input type="text" id="quantity" class="form-control text-center border-secondary border-start-0 border-end-0" value="1" min="1" max="10" readonly>
+            <button class="btn btn-outline-secondary border-start-0" type="button" onclick="updateQuantity(1)"><i class="bi bi-plus"></i></button>
+          </div>
+          <button id="addToCart" class="btn btn-dark px-4 py-2 rounded-pill fw-bold shadow-sm flex-grow-1 flex-md-grow-0">
+            Thêm vào giỏ <i class="bi bi-cart-plus ms-2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Database (mảng JS) và Logic xử lý -->
+  <script src="product.js"></script>
+  <script type="module" src="productDetals.js"></script>
+  
+  <script>
+    function updateQuantity(change) {
+      const quantityInput = document.getElementById('quantity');
+      let currentQuantity = parseInt(quantityInput.value);
+      let newQuantity = currentQuantity + change;
+      
+      if (newQuantity >= parseInt(quantityInput.min) && newQuantity <= parseInt(quantityInput.max)) {
+        quantityInput.value = newQuantity;
+      }
+    }
+  </script>
+</body>
+</html>
