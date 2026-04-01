@@ -10,15 +10,58 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-
-   
+    <style>
+      /* Cải thiện UI Navbar */
+      .navbar {
+        transition: all 0.3s ease;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        position: relative;
+      }
+      .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background-color: #dc3545;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+      .navbar-nav .nav-link:hover::after,
+      .navbar-nav .nav-link.active::after {
+        width: 80%;
+      }
+      
+      /* Cải thiện UI Product Card */
+      .product-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+      }
+      .product-card .position-relative {
+        overflow: hidden;
+      }
+      .product-img {
+        transition: transform 0.5s ease;
+      }
+      .product-card:hover .product-img {
+        transform: scale(1.05);
+      }
+    </style>
 </head>
 <body>
   <header>
     <!-- nav -->
     
        
-         <nav class="navbar navbar-expand-lg  fixed-top ">
+         <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm py-2">
           <div class="container">
             
           
@@ -70,20 +113,20 @@
         </div>
         <div class="col-md-8">
           <div class="d-flex flex-column flex-md-row gap-3 justify-content-md-end">
-            <select class="form-select w-auto shadow-sm border-0">
-              <option selected>Lọc theo mức giá</option>
+            <select id="priceFilter" class="form-select w-auto shadow-sm border-0">
+              <option value="all" selected>Lọc theo mức giá</option>
               <option value="1">Dưới 10.000$</option>
               <option value="2">10.000$ - 50.000$</option>
               <option value="3">Trên 50.000$</option>
             </select>
-            <select class="form-select w-auto shadow-sm border-0">
-              <option selected>Danh mục</option>
+            <select id="categoryFilter" class="form-select w-auto shadow-sm border-0">
+              <option value="all" selected>Danh mục</option>
               <option value="1">Bàn ghế</option>
               <option value="2">Giường ngủ</option>
               <option value="3">Đồ trang trí</option>
             </select>
             <div class="input-group shadow-sm" style="max-width: 300px;">
-              <input type="text" class="form-control border-0" placeholder="Tìm kiếm sản phẩm...">
+              <input id="searchInput" type="text" class="form-control border-0" placeholder="Tìm kiếm sản phẩm...">
               <button class="btn btn-dark border-0" type="button"><i class="bi bi-search"></i></button>
             </div>
           </div>
@@ -333,3 +376,65 @@
 
   <script src="product.js"></script>
   <script type="module" src="cartDetals.js"></script>
+
+  <!-- Script Xử lý Search & Filter -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('searchInput');
+      const priceFilter = document.getElementById('priceFilter');
+      const categoryFilter = document.getElementById('categoryFilter');
+
+      function filterProducts() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const priceValue = priceFilter.value;
+        const categoryValue = categoryFilter.value;
+
+        // Lấy toàn bộ các card sản phẩm
+        const productCards = document.querySelectorAll('.product-card');
+
+        productCards.forEach(card => {
+          const col = card.closest('.col'); // Lấy cột cha bọc bên ngoài card
+          const title = card.querySelector('.card-title').textContent.toLowerCase();
+          const priceText = card.querySelector('.card-text').textContent;
+          
+          // Chuyển đổi chuỗi giá (VD: "120.000$") thành kiểu số nguyên (120000)
+          const price = parseFloat(priceText.replace(/[\.$]/g, ''));
+
+          // 1. Kiểm tra điều kiện tìm kiếm theo tên
+          const matchSearch = title.includes(searchTerm);
+
+          // 2. Kiểm tra điều kiện mức giá
+          let matchPrice = true;
+          if (priceValue === "1") matchPrice = price < 10000;
+          else if (priceValue === "2") matchPrice = price >= 10000 && price <= 50000;
+          else if (priceValue === "3") matchPrice = price > 50000;
+
+          // 3. Kiểm tra điều kiện danh mục (Ánh xạ từ khóa trong tên)
+          let matchCategory = true;
+          if (categoryValue === "1") {
+            matchCategory = title.includes('bàn') || title.includes('ghế') || title.includes('sofa');
+          } else if (categoryValue === "2") {
+            matchCategory = title.includes('giường');
+          } else if (categoryValue === "3") {
+            matchCategory = title.includes('đèn') || title.includes('kệ') || title.includes('gương') || title.includes('tủ');
+          }
+
+          // Nếu thoả mãn cả 3 điều kiện thì hiển thị, ngược lại thì ẩn thẻ cha (col)
+          if (matchSearch && matchPrice && matchCategory) {
+            col.style.display = ''; 
+          } else {
+            col.style.display = 'none';
+          }
+        });
+      }
+
+      // Lắng nghe sự kiện để kích hoạt bộ lọc ngay khi có thay đổi
+      searchInput.addEventListener('input', filterProducts);
+      priceFilter.addEventListener('change', filterProducts);
+      categoryFilter.addEventListener('change', filterProducts);
+      
+      // Lắng nghe thêm nút click cho biểu tượng kính lúp (Search)
+      const searchBtn = searchInput.nextElementSibling;
+      if (searchBtn) searchBtn.addEventListener('click', filterProducts);
+    });
+  </script>

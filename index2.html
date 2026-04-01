@@ -15,12 +15,47 @@
 
   <!-- CSS riêng -->
   <link rel="stylesheet" href="index2.css">
+  <style>
+    /* Cải thiện UI Navbar */
+    .navbar {
+      transition: all 0.3s ease;
+    }
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      position: relative;
+    }
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background-color: #dc3545;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+      width: 80%;
+    }
+    
+    /* Cải thiện UI hình ảnh Gốc Cảm Hứng */
+    .hover-scale {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 8px;
+    }
+    .hover-scale:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
 
   <!-- ===== HEADER ===== -->
   <header>
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm py-2">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img src="image/icon.jpg" alt="Logo" width="80" class="me-2">
@@ -101,34 +136,34 @@
   <div class="container my-5">
     <div class="row g-4" data-aos="fade-up">
       <div class="col-6 col-md-3 text-center">
-        <img src="image/shot1.png" class="img-fluid mb-2">
+        <img src="image/shot1.png" class="img-fluid mb-3 hover-scale">
         <h5>Phòng khách</h5>
       </div>
       <div class="col-6 col-md-3 text-center">
-        <img src="image/shot2.png" class="img-fluid mb-2">
+        <img src="image/shot2.png" class="img-fluid mb-3 hover-scale">
         <h5>Phòng ăn</h5>
       </div>
       <div class="col-6 col-md-3 text-center">
-        <img src="image/shot3.png" class="img-fluid mb-2">
+        <img src="image/shot3.png" class="img-fluid mb-3 hover-scale">
         <h5>Phòng ngủ</h5>
       </div>
       <div class="col-6 col-md-3 text-center">
-        <img src="image/shot4.png" class="img-fluid mb-2">
+        <img src="image/shot4.png" class="img-fluid mb-3 hover-scale">
         <h5>Phòng làm việc</h5>
       </div>
     </div>
 
     <div class="row g-4 mt-3 justify-content-center">
       <div class="col-6 col-md-3 text-center" data-aos="fade-right">
-        <img src="image/shot5.png" class="img-fluid mb-2">
+        <img src="image/shot5.png" class="img-fluid mb-3 hover-scale">
         <h5>Sofa</h5>
       </div>
       <div class="col-6 col-md-3 text-center" data-aos="fade-up">
-        <img src="image/shot6.png" class="img-fluid mb-2">
+        <img src="image/shot6.png" class="img-fluid mb-3 hover-scale">
         <h5>Giường</h5>
       </div>
       <div class="col-6 col-md-3 text-center" data-aos="fade-left">
-        <img src="image/shot7.png" class="img-fluid mb-2">
+        <img src="image/shot7.png" class="img-fluid mb-3 hover-scale">
         <h5>Bàn ăn</h5>
       </div>
     </div>
