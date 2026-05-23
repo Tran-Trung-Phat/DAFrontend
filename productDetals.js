@@ -22,8 +22,19 @@ if (selectedProduct){
     const quantity = quantityInput ? parseInt(quantityInput.value) : 1;
     
     addToCart(selectedProduct, quantity);
-    alert('Sản phẩm đã được thêm vào giỏ hàng!');
+    showToast(`Đã thêm ${quantity} "${selectedProduct.name}" vào giỏ hàng!`);
   });
+
+  function showToast(message) {
+    const toastEl = document.getElementById('cartToast');
+    if (toastEl && typeof bootstrap !== 'undefined') {
+        document.getElementById('toastMessage').textContent = message;
+        const toast = new bootstrap.Toast(toastEl);
+        toast.show();
+    } else {
+        alert(message);
+    }
+  }
 }else{
   document.getElementById('product-detail-container').innerHTML = `
     <div class="text-center mt-5">

@@ -22,8 +22,19 @@ if (typeof products === 'undefined') {
                 // Gọi hàm addToCart với sản phẩm tìm được và số lượng là 1
                 addToCart(productToAdd, 1);
             
-                alert(`Đã thêm "${productToAdd.name}" vào giỏ hàng!`);
+                showToast(`Đã thêm "${productToAdd.name}" vào giỏ hàng!`);
             }
         });
     });
+}
+
+function showToast(message) {
+    const toastEl = document.getElementById('cartToast');
+    if (toastEl && typeof bootstrap !== 'undefined') {
+        document.getElementById('toastMessage').textContent = message;
+        const toast = new bootstrap.Toast(toastEl);
+        toast.show();
+    } else {
+        alert(message); // Fallback nếu quên chưa dán HTML
+    }
 }

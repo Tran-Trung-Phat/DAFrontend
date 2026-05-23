@@ -19,8 +19,21 @@ export function addToCart(product, quantity =1){
   }
   //lưu giỏ hàng vào localStorage
   localStorage.setItem('cart',JSON.stringify(cart));
-  // Cập nhật số lượng giỏ hàng trên icon tức thời
-  if (typeof updateCartCount === 'function') updateCartCount();
+  
+  updateCartCount();
+}
+
+export function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  // Tính tổng số lượng của tất cả sản phẩm
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+  
+  // Hỗ trợ cả 2 ID tùy theo trang HTML thiết lập
+  const badge = document.getElementById('cart-count') || document.getElementById('cart-badge');
+  if (badge) {
+    badge.textContent = totalQuantity;
+    badge.style.display = totalQuantity > 0 ? 'inline-block' : 'none';
+  }
 }
 
 export function removeFromCart(productId) {
@@ -50,7 +63,7 @@ function renderCart() {
         <a href="index6.html" class="btn btn-dark mt-3 px-4 rounded-pill">Tiếp tục mua sắm</a>
       </div>
     `;
-    if (typeof updateCartCount === 'function') updateCartCount();
+    updateCartCount();
     return;
   }
 
@@ -122,7 +135,7 @@ function renderCart() {
   attachCartEvents();
   
   // Cập nhật số lượng giỏ hàng trên Navbar
-  if (typeof updateCartCount === 'function') updateCartCount();
+  updateCartCount();
 }
 
 function attachCartEvents() {
@@ -170,4 +183,8 @@ function updateQuantity(productId, change) {
     renderCart(); // Load lại giao diện sau khi điều chỉnh
   }
 }
-renderCart();
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderCart();
+  updateCartCount(); // Khởi tạo con số giỏ hàng ngay khi tải trang
+});
